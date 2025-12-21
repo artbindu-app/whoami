@@ -22,5 +22,9 @@
         "3utools.png": "*.jpg, *.svg, *.png, *.jpeg",
         "mediakind.svg":  "*.jpg, *.svg, *.png, *.jpeg",
         "compose.yaml": ".docker*"
-    }
+    },
+    "cSpell.words": [
+        "Biswasindhu",
+        "Mandal"
+    ]
 }

@@ -1,9 +1,43 @@
-# directory
-.github
+# Dependencies
 node_modules
 package-lock.json
+
+# Build output
+dist/
+.cache/
+
+# Development
 .DS_Store
+.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temp files
+*.tmp
+.temp/
+
+# Legacy (keep these if you want to ignore old files)
 lib/
-./scripts/main.js
+./scripts/main.js.bak
 ./scripts/lib/config.js
-Help.md
