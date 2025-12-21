@@ -4,6 +4,6 @@ node_modules
 package-lock.json
 .DS_Store
 lib/
-./scripts/main.js
-./scripts/lib/config.js
-Help.md
+
+# Build output
+dist/
