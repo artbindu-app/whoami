@@ -88,15 +88,17 @@ function myAPICalls() {
   setTimeout(mediumBlogCounts, 1000);
 }
 function stackOverflowReputation() {
-  const get_api = `https://stackoverflow.com/users/flair/10850045.json`;
+  const get_api = `https://api.stackexchange.com/2.2/users/10850045?site=stackoverflow`;
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", proxy + get_api, true);
+  xhr.open("GET", get_api, true);
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.onload = (e) => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         data = JSON.parse(xhr.response);
-        document.getElementById("stackoverflowReputation").innerHTML = data.reputation;
+        if(data && data.items && data.items.length > 0) {
+          document.getElementById("stackoverflowReputation").innerHTML = data.items[0].reputation;
+        }
       } else {
         console.error(xhr.statusText);
       }
