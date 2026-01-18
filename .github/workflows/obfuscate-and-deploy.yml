@@ -1,0 +1,55 @@
+name: Obfuscate and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - digitalcv
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  obfuscate-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/iron'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run JavaScript Obfuscation
+      run: npm run obfuscate
+      
+    - name: Upload obfuscated artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: obfuscated-js
+        path: |
+          js-obfuscated/
+          scripts-obfuscated/
+        retention-days: 30
+        
+    - name: Commit obfuscated files (optional)
+      if: github.event_name == 'push' && github.ref == 'refs/heads/digitalcv'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add js-obfuscated/ scripts-obfuscated/ || true
+        git diff --staged --quiet || git commit -m "chore: update obfuscated JavaScript files [skip ci]"
+        
+    - name: Push changes
+      if: github.event_name == 'push' && github.ref == 'refs/heads/digitalcv'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

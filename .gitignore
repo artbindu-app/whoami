@@ -1,5 +1,4 @@
 # directory
-.github
 node_modules
 package-lock.json
 .DS_Store
@@ -7,3 +6,18 @@ lib/
 ./scripts/main.js
 ./scripts/lib/config.js
 Help.md
+
+# Obfuscated output (uncomment if you don't want obfuscated files in repo)
+# js-obfuscated/
+# scripts-obfuscated/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
