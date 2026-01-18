@@ -1,6 +1,5 @@
 # directory
 node_modules
-package-lock.json
 .DS_Store
 lib/
 ./scripts/main.js
