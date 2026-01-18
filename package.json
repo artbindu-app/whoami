@@ -3,7 +3,7 @@
     "version": "3.0.0",
     "description": "Digital CV built with React",
     "author": "Biswasindhu Mandal",
-    "license": "ISC",
+    "license": "MIT",
     "private": true,
     "scripts": {
         "start": "react-scripts start",

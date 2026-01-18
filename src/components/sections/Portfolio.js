@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import config from '../../config/config';
+import './Portfolio.css';
 
 const Portfolio = () => {
   const { categories, blogs, certificates } = config.portfolio;
@@ -16,12 +17,11 @@ const Portfolio = () => {
                 {categories.map((category) => (
                   <li key={category.id} className="nav-item">
                     <button
-                      className={`nav-link ${activeTab === category.id ? 'active' : ''}`}
+                      className={`nav-link portfolio-tab-button ${activeTab === category.id ? 'active' : ''}`}
                       onClick={() => setActiveTab(category.id)}
                       role="tab"
                       aria-label={category.tooltip}
                       title={category.tooltip}
-                      style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}
                     >
                       <i className={category.icon} aria-hidden="true"></i>
                     </button>

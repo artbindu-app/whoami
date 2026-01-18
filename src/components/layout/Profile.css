@@ -1,0 +1,83 @@
+/* Profile page custom styles */
+
+/* Profile Page Background Style */
+.page-header {
+  background: rgba(44, 44, 44, 0.2);
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(55, 140, 63, 0.6));
+}
+
+.page-header .btn {
+  width: 140px;
+}
+
+.profile-header-image {
+  background-position: center;
+  background-size: cover;
+}
+
+/* Profile Image Style */
+@keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0.0;
+  }
+}
+
+.cc-profile-image a {
+  position: relative;
+}
+
+.cc-profile-image a:before {
+  content: "";
+  border: 15px solid rgba(55, 140, 63, 0.6);
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  left: 0;
+  animation: pulsate 1.6s ease-out infinite;
+  opacity: 0.0;
+  z-index: 99;
+}
+
+.cc-profile-image img {
+  position: relative;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  padding: 0;
+  margin: 0;
+  border: 15px solid transparent;
+  z-index: 9999;
+  transition: all 0.3s ease-out;
+}
+
+.cc-profile-image a:hover img {
+  transform: scale(1.06, 1.06);
+}
+
+.cc-profile-image a:hover:before {
+  animation: none;
+}
+
+/* Profile Page Social button Style */
+.button-container .btn-default {
+  margin-right: 8px;
+}
+
+.profile-social-button {
+  position: relative;
+  overflow: visible;
+}
+
+.profile-badge {
+  z-index: 0;
+  top: 52px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import config from '../../config/config';
+import './Education.css';
 
 const Education = () => {
   const educations = config.educations;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSocialStats } from '../../hooks/useStats';
 import config from '../../config/config';
+import './Profile.css';
 
 const Profile = () => {
   const { stackOverflowRep, mediumBlogCount } = useSocialStats();
@@ -10,7 +11,7 @@ const Profile = () => {
       <div className="wrapper">
         <div className="page-header page-header-small" filter-color="green">
           <div 
-            className="page-header-image" 
+            className="page-header-image profile-header-image" 
             data-parallax="true"
             style={{ backgroundImage: `url('${config.profile.backgroundImage}')` }}
           ></div>
@@ -31,31 +32,29 @@ const Profile = () => {
             <div className="container">
               <div className="button-container">
                 <a 
-                  className="btn btn-default btn-round btn-lg btn-icon cc-stackoverflow cc-stackoverflow-bg"
+                  className="btn btn-default btn-round btn-lg btn-icon cc-stackoverflow cc-stackoverflow-bg profile-social-button"
                   href={config.socialLinks.stackoverflow} 
                   target="_blank" 
                   rel="noopener noreferrer tooltip"
-                  title="Follow me on StackOverflow" 
-                  style={{ position: 'relative', overflow: 'visible' }}
+                  title="Follow me on StackOverflow"
                 >
                   <i className="fa fa-stack-overflow"></i>
                   {stackOverflowRep && (
-                    <span className="badge badge-success" style={{ zIndex: 0, top: '52px' }}>
+                    <span className="badge badge-success profile-badge">
                       {stackOverflowRep}
                     </span>
                   )}
                 </a>
                 <a 
-                  className="btn btn-default btn-round btn-lg btn-icon cc-medium cc-medium-bg p-0" 
+                  className="btn btn-default btn-round btn-lg btn-icon cc-medium cc-medium-bg p-0 profile-social-button" 
                   href={config.socialLinks.medium}
                   target="_blank" 
                   rel="noopener noreferrer tooltip"
-                  title="Follow me on Medium" 
-                  style={{ position: 'relative', overflow: 'visible' }}
+                  title="Follow me on Medium"
                 >
                   <i className="fa fa-medium"></i>
                   {mediumBlogCount && (
-                    <span className="badge badge-warning" style={{ zIndex: 0, top: '52px' }}>
+                    <span className="badge badge-warning profile-badge">
                       {mediumBlogCount}
                     </span>
                   )}
