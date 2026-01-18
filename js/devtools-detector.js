@@ -7,7 +7,7 @@
     'use strict';
     
     // Skip detector on localhost:12346
-    if (window.location.href.indexOf('127.0.0.1:12346') !== -1) {
+    if (window.location.href.indexOf('127.0.0.1') !== -1) {
         return;
     }
     
