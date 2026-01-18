@@ -6,6 +6,11 @@
 (function() {
     'use strict';
     
+    // Skip detector on localhost:12346
+    if (window.location.href.indexOf('127.0.0.1:12346') !== -1) {
+        return;
+    }
+    
     var isDevToolsOpen = false;
     var threshold = 160;
     
