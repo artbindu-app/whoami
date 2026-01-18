@@ -5,7 +5,7 @@
   "deadCodeInjection": true,
   "deadCodeInjectionThreshold": 0.4,
   "debugProtection": true,
-  "debugProtectionInterval": 2000,
+  "debugProtectionInterval": 1000,
   "disableConsoleOutput": true,
   "identifierNamesGenerator": "hexadecimal",
   "log": false,
@@ -27,5 +27,6 @@
   "stringArrayWrappersType": "function",
   "stringArrayThreshold": 0.75,
   "transformObjectKeys": true,
-  "unicodeEscapeSequence": false
+  "unicodeEscapeSequence": false,
+  "target": "browser"
 }
